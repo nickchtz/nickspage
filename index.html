@@ -6,10 +6,9 @@
 
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
     <link rel="icon" type="image/png" href="https://nickchtz.com/favicon.png">
-
     <link rel="canonical" href="https://nickchtz.com/">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nickchtz.com/">
     <meta property="og:title" content="Nick C*****s">
@@ -36,11 +35,11 @@
                             <i class="fa-solid fa-info-circle"></i>
                             About Me
                         </span>
-                        <span class="chevron">></span>
+						<i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </li>
 
-                <li class="option">
+				<li class="option">
                     <a href="#" data-copy="@nickdotphp">
                         <span>
                             <i class="fa-brands fa-instagram"></i>
@@ -74,9 +73,9 @@
 
 
         <section class="footer-info">
-            <div class="small t-bold">
+            <p class="small t-bold">
                 © 2022 - 2026 Nick C. All Rights Reserved.
-            </div>
+			</p>
         </section>
     </main>
 
@@ -84,5 +83,70 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-<script src="./assets/js/app.js"></script>
+<script src="./assets/js/toast.js"></script>
+<script>
+	// Dear God, send help.
+
+    function createBackgroundVideo(){
+        if (document.getElementById("background-video")) {
+            return;
+        }
+
+        const video  = document.createElement('video');
+        video.id = "background-video";
+        video.loop = true;
+
+        const source = document.createElement('source');
+        source.src  = './assets/media/videos/patagonia.webm';
+        source.type = "video/mp4";
+		
+        video.classList.add('hide');
+        video.append(source);
+        
+		document.body.append(video);
+        return video;
+    }
+
+    function initializeApp(){
+        const backgroundVideo = createBackgroundVideo();
+        const welcomeMessage  = document.getElementById('welcome-message');
+        const mainMenu        = document.getElementById('main-menu');
+
+        welcomeMessage.classList.add('hide');
+        
+        welcomeMessage.addEventListener('transitionend', () => {
+            welcomeMessage.remove();
+            
+            backgroundVideo.play();
+            backgroundVideo.classList.remove('hide');
+            
+            mainMenu.classList.remove('hide');
+
+            gsap.from(mainMenu, {
+                y: window.innerHeight + 200,
+                duration: 1.2,
+                ease: "circ.out"
+            });
+
+        }, { once: true });
+
+    }
+
+	document.querySelectorAll('[data-copy]').forEach((parent) => {
+		parent.addEventListener('click', async (e) => {
+			const copy = parent.getAttribute('data-copy');
+
+			try {
+				await navigator.clipboard.writeText(copy);
+				alert(`Copied ${copy}`);
+			} catch (err) {
+				alert(err);
+			}
+		});
+	});
+
+    window.alert = (msg) => toast.create({ text: msg, position: 'top-right'});
+    document.addEventListener('pointerdown', initializeApp, { once: true }); 
+    document.addEventListener('contextmenu', e => e.preventDefault());
+</script>
 </html>
