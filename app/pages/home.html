@@ -1,0 +1,10 @@
+<div id="homescreen">
+    <div id="apps" x-data="apps">
+        <template x-for="(app, index) in apps" :key="index">
+            <a :href="app.href" class="app-icon">
+                <img :src="app.icon" alt="">
+                <span x-text="app.label"></span>
+            </a>
+        </template>
+    </div>
+</div>

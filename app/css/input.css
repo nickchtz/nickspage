@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+body{
+    @apply bg-black text-white overflow-hidden;
+}
+
+#app{
+    @apply bg-white min-h-dvh bg-[url(../img/background.jpg)] bg-cover  max-w-sm m-auto;
+}
+
+#homescreen{
+    @apply p-5 py-8;
+
+    #apps{
+        @apply grid grid-cols-4 gap-2;
+
+        .app-icon{
+            @apply flex flex-col items-center justify-center gap-1.5;
+            
+            img{
+                @apply w-16 aspect-square;
+            }
+
+            span{
+                @apply text-xs text-gray-100;
+            }
+        }
+    }
+
+}
+
+#instagram{
+    #nav{
+        @apply flex gap-4 items-center w-full text-center p-4 h-14 bg-[linear-gradient(180deg,rgba(123,197,247,1)_0%,rgba(43,85,125,1)_81%,rgba(30,57,84,1)_99%)];
+    
+        a{
+            @apply p-1 px-2 border border-neutral-800 rounded-sm text-sm bg-[linear-gradient(180deg,rgba(123,197,247,1)_0%,rgba(43,85,125,1)_81%,rgba(30,57,84,1)_99%)];
+        }
+
+        p{
+            @apply text-lg font-bold;
+        }
+
+    }
+
+    #profile-card{
+        @apply flex items-center gap-4 mb-6;
+
+        .info{
+            .label{
+                @apply text-neutral-800 uppercase font-bold text-xs;
+            }
+
+            p{
+                @apply text-sm;
+            }
+
+        }
+        
+        .bio{
+            @apply text-xs text-neutral-800;
+        }
+        
+        img{
+            @apply h-20 rounded-xl;
+        }
+    }
+
+    #posts-grid{
+        @apply grid grid-cols-3 gap-1;
+
+        img{
+            @apply aspect-3/4 object-cover;
+        }
+    }
+    
+    #menu{
+        @apply p-6 min-h-dvh bg-white text-black;
+    }
+}
