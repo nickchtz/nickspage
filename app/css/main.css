@@ -226,6 +226,7 @@ body {
 #app {
   margin: auto;
   min-height: 100dvh;
+  width: 100%;
   max-width: var(--container-sm);
   background-color: var(--color-white);
   background-image: url(../img/background.jpg);
