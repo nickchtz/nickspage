@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
     --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-neutral-700: oklch(37.1% 0 none);
     --color-neutral-800: oklch(26.9% 0 none);
     --color-black: #000;
     --color-white: #fff;
@@ -189,17 +190,8 @@
   .inline {
     display: inline;
   }
-  .table {
-    display: table;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -212,17 +204,6 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -238,7 +219,7 @@
   }
 }
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: var(--color-black);
   color: var(--color-white);
 }
@@ -324,7 +305,7 @@ body {
   .bio {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
-    color: var(--color-neutral-800);
+    color: var(--color-neutral-700);
   }
   img {
     height: calc(var(--spacing) * 20);
@@ -333,7 +314,7 @@ body {
 }
 #instagram #posts-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing);
   img {
     aspect-ratio: 3/4;
@@ -365,16 +346,6 @@ body {
 @property --tw-skew-y {
   syntax: "*";
   inherits: false;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
@@ -429,6 +400,11 @@ body {
   syntax: "*";
   inherits: false;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -441,8 +417,6 @@ body {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
-      --tw-border-style: solid;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -456,6 +430,7 @@ body {
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
+      --tw-border-style: solid;
       --tw-font-weight: initial;
     }
   }
