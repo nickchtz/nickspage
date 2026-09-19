@@ -159,6 +159,10 @@ nav{
     @apply flex flex-col gap-1;
 }
 
+.link{
+    @apply text-lg hover:underline w-fit;
+}
+
 .links{
     @apply flex flex-col gap-2 text-3xl;
 
@@ -173,8 +177,4 @@ nav{
 
 .footer-text{
     @apply text-xs leading-3.5 tracking-wider absolute top-[85vh];
-}
-
-@layer components{
-
 }
