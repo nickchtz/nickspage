@@ -1,5 +1,4 @@
 import { home } from '../controllers/home.js';
-import { nickagram } from '../controllers/nickagram.js';
 
 export const routes = {
     '#notFound': {
@@ -10,10 +9,5 @@ export const routes = {
         file: 'home',
         title: 'Home',
         onload: home
-    },
-    '#nickagram': {
-        file: 'nickagram',
-        title: 'Nickagram',
-        onload: nickagram
     },
 };

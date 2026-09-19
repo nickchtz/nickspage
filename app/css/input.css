@@ -1,80 +1,180 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Ultralight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Heavy.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-ThinItalic.otf") format("opentype");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-UltralightItalic.otf") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-LightItalic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-RegularItalic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-MediumItalic.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-SemiboldItalic.otf") format("opentype");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-BoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-HeavyItalic.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../fonts/SF-Pro-Display-BlackItalic.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+}
+
+@theme {
+    --color-primary: #F34213;
+    --font-sf: "SF Pro Display", sans-serif;
+}
+
+#wrapper{
+    @apply p-10 w-full max-w-sm m-auto min-h-dvh bg-primary flex flex-col gap-12;
+}
+
 body{
-    @apply bg-black text-white overflow-x-hidden;
+    @apply bg-black text-white overflow-x-hidden font-sf font-thin;
 }
 
-#app{
-    @apply bg-white min-h-dvh bg-[url(../img/background.jpg)] bg-cover w-full max-w-sm m-auto;
+h1{
+    @apply font-light text-5xl leading-7 tracking-tighter;
 }
 
-#homescreen{
-    @apply p-5 py-8;
+nav{
+    .logo{
+        #title{
+            @apply w-60;
+        }
 
-    #apps{
-        @apply grid grid-cols-4 gap-2;
-
-        .app-icon{
-            @apply flex flex-col items-center justify-center gap-1.5;
-            
-            img{
-                @apply w-16 aspect-square;
-            }
-
-            span{
-                @apply text-xs text-gray-100;
-            }
+        #subtitle{
+            @apply w-35;
         }
     }
-
 }
 
-#instagram{
-    #nav{
-        @apply flex gap-4 items-center w-full text-center p-4 h-14 bg-[linear-gradient(180deg,rgba(123,197,247,1)_0%,rgba(43,85,125,1)_81%,rgba(30,57,84,1)_99%)];
-    
-        a{
-            @apply p-1 px-2 border border-neutral-800 rounded-sm text-sm bg-[linear-gradient(180deg,rgba(123,197,247,1)_0%,rgba(43,85,125,1)_81%,rgba(30,57,84,1)_99%)];
-        }
+.buttons-list{
+    @apply flex flex-col gap-1;
+}
 
-        p{
-            @apply text-lg font-bold;
-        }
+.links{
+    @apply flex flex-col gap-2 text-3xl;
 
-    }
-
-    #profile-card{
-        @apply flex items-center gap-4 mb-6;
-
-        .info{
-            .label{
-                @apply text-neutral-800 uppercase font-bold text-xs;
-            }
-
-            p{
-                @apply text-sm;
-            }
-
-        }
-        
-        .bio{
-            @apply text-xs text-neutral-700;
-        }
-        
-        img{
-            @apply h-20 rounded-xl;
-        }
-    }
-
-    #posts-grid{
-        @apply grid grid-cols-2 gap-1;
+    a{
+        @apply flex items-center hover:text-[#F7CACD] gap-2;
 
         img{
-            @apply aspect-3/4 object-cover;
+            @apply h-6.5;
         }
     }
-    
-    #menu{
-        @apply p-6 min-h-dvh bg-white text-black;
-    }
+}
+
+.footer-text{
+    @apply text-xs leading-3.5 tracking-wider absolute top-[85vh];
+}
+
+@layer components{
+
 }

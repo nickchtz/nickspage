@@ -1,15 +1,7 @@
-export const apps = [
-    { icon: './app/img/nickagram.png', label: 'Nickagram', href: '#nickagram'},
-    { icon: './app/img/evilfy.png', label: 'Evilfy', href: '#' },
-    { icon: './app/img/email.png', label: 'Email', href: '#' },
-    { icon: './app/img/paypal.png', label: 'PayPal', href: '#' },
-];
-
-export const nickagram_posts = [
-    './app/img/nickagram-1.jpg',
-    './app/img/nickagram-1.jpg',
-    './app/img/nickagram-1.jpg',
-    './app/img/nickagram-1.jpg',
-    './app/img/nickagram-1.jpg',
-    './app/img/nickagram-1.jpg',
+export const links = [
+    { icon: './app/img/github.png', text: 'GitHub', url: 'https://github.com/nickchtz.com' },
+    { icon: './app/img/instagram.png', text: 'Instagram', url: 'https://instagram.com/nickdotphp' },
+    { icon: './app/img/tiktok.png', text: 'TikTok', url: 'https://tiktok.com/nick.tsx' },
+    { icon: './app/img/envelope-solid.png', text: 'Email Address', url: '' },
+    { icon: './app/img/arrow-left.png', text: 'Main Site', url: 'https://nickchtz.com' },
 ];

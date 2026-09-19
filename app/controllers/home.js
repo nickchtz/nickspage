@@ -1,9 +1,9 @@
-import { apps } from '../js/constants.js';
+import { links } from '../js/constants.js';
 
 export const home = () => {
-    Alpine.data('apps', () => ({        
-        get apps() {
-            return apps;
+    Alpine.data('links', () => ({        
+        get links() {
+            return links;
         }
     }));
 };
