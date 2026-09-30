@@ -7,10 +7,8 @@
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-sm: 24rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-lg: 1.125rem;
@@ -22,7 +20,6 @@
     --font-weight-thin: 100;
     --font-weight-light: 300;
     --font-weight-normal: 400;
-    --font-weight-bold: 700;
     --tracking-tighter: -0.05em;
     --tracking-wider: 0.05em;
     --default-transition-duration: 150ms;
@@ -194,17 +191,8 @@
   .inline {
     display: inline;
   }
-  .table {
-    display: table;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -212,16 +200,8 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .font-mono {
     font-family: var(--font-mono);
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
   }
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
@@ -229,10 +209,6 @@
   }
   .underline {
     text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -355,20 +331,17 @@
   font-weight: 900;
   font-style: italic;
 }
-#wrapper {
-  margin: auto;
-  display: flex;
-  min-height: 100dvh;
-  width: 100%;
-  max-width: var(--container-sm);
-  flex-direction: column;
-  gap: calc(var(--spacing) * 12);
-  background-color: var(--color-primary);
-  padding: calc(var(--spacing) * 10);
+#app {
+  flex: 1;
 }
 body {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 12);
   overflow-x: hidden;
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
+  padding: calc(var(--spacing) * 10);
   font-family: var(--font-sf);
   --tw-font-weight: var(--font-weight-thin);
   font-weight: var(--font-weight-thin);
@@ -396,7 +369,6 @@ nav .logo #subtitle {
   gap: var(--spacing);
 }
 .link {
-  width: fit-content;
   font-size: var(--text-lg);
   line-height: var(--tw-leading, var(--text-lg--line-height));
   &:hover {
@@ -408,13 +380,14 @@ nav .logo #subtitle {
 .links {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacing) * 2);
+  gap: calc(var(--spacing) * 3);
   font-size: var(--text-3xl);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
   a {
     display: flex;
+    width: fit-content;
     align-items: center;
-    gap: calc(var(--spacing) * 2);
+    gap: calc(var(--spacing) * 3);
     &:hover {
       @media (hover: hover) {
         color: #F7CACD;
@@ -426,8 +399,6 @@ nav .logo #subtitle {
   }
 }
 .footer-text {
-  position: absolute;
-  top: 85vh;
   font-size: var(--text-xs);
   line-height: var(--tw-leading, var(--text-xs--line-height));
   --tw-leading: calc(var(--spacing) * 3.5);
@@ -455,19 +426,9 @@ nav .logo #subtitle {
   syntax: "*";
   inherits: false;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
@@ -538,9 +499,7 @@ nav .logo #subtitle {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;

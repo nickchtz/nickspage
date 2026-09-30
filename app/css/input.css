@@ -131,12 +131,12 @@
     --font-sf: "SF Pro Display", sans-serif;
 }
 
-#wrapper{
-    @apply p-10 w-full max-w-sm m-auto min-h-dvh bg-primary flex flex-col gap-12;
+#app{
+    @apply flex-1;
 }
 
 body{
-    @apply bg-black text-white overflow-x-hidden font-sf font-thin;
+    @apply bg-primary text-white overflow-x-hidden font-sf font-thin flex flex-col p-10 gap-12 min-h-dvh;
 }
 
 h1{
@@ -160,14 +160,14 @@ nav{
 }
 
 .link{
-    @apply text-lg hover:underline w-fit;
+    @apply text-lg hover:underline;
 }
 
 .links{
-    @apply flex flex-col gap-2 text-3xl;
+    @apply flex flex-col gap-3 text-3xl;
 
     a{
-        @apply flex items-center hover:text-[#F7CACD] gap-2;
+        @apply flex items-center hover:text-[#F7CACD] gap-3 w-fit;
 
         img{
             @apply h-6.5;
@@ -176,5 +176,5 @@ nav{
 }
 
 .footer-text{
-    @apply text-xs leading-3.5 tracking-wider absolute top-[85vh];
+    @apply text-xs leading-3.5 tracking-wider;
 }
